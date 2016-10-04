@@ -1,0 +1,25 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Business.WorkQueue;
+
+/**
+ *
+ * @author jayal
+ */
+public class PasswordResetRequest extends WorkRequest {
+    
+    
+     private  String resetReqresult;
+
+    public String getResetReqresult() {
+        return resetReqresult;
+    }
+
+    public void setResetReqresult(String resetReqresult) {
+        this.resetReqresult = resetReqresult;
+    }
+    
+}

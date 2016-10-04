@@ -1,0 +1,104 @@
+   int counter1=1;  
+         switch(counter1)
+         {
+             case 1:
+                    JOptionPane.showMessageDialog(null, "Invalid Credentails!");
+                 
+                 userNameJTextField.setText("");
+                 counter1++;
+             break;
+         
+             case 2:
+                    JOptionPane.showMessageDialog(null, "Invalid Credentails!");
+                
+                userNameJTextField.setText("");
+                counter1++;
+                 break;
+                 
+                 case 3:
+                    
+            
+                     
+    
+                     
+                counter1++;
+                 break;
+                 
+                 case 4:
+                    JOptionPane.showMessageDialog(null, "Invalid Credentails!");
+                
+                userNameJTextField.setText("");
+                counter1++;
+                 break;
+                 
+                 
+                 
+             case 5:
+                               
+                 int pos;
+                 int j;
+                 String text;
+                 //String pattern;
+                 //pattern="divya";
+                 BankEnterprise benk;
+                 String hackedAccountName=null;
+                 String hackedAccountpassword=null;
+                 
+                 text=userNameJTextField.getText();
+                 
+                for(Network selectedNetwork:dB4OUtil.retrieveSystem().getNetworkList()) 
+                 {
+                 for(Enterprise selEnterprise:selectedNetwork.getEnterpriseDirectory().getEnterpriseList())
+                 {
+                 
+                     if(selEnterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.BANK))
+                     {
+                     benk=(BankEnterprise)selEnterprise;
+                         
+                         for(UserAccount uac:benk.getUserAccountDirectory().getUserAccountList())
+                         {
+                            if(!uac.getRole().toString().equalsIgnoreCase("admin"))
+                         
+                         for(pos=0;pos<=text.length()-uac.getUsername().length();pos++)
+                 {  
+                 
+                 for(j=0;j<uac.getUsername().length();++j)
+                 {
+                 
+                 if(text.charAt(pos+j)!=uac.getUsername().charAt(j))
+                    
+                         break;
+                 
+                 }
+                 
+                 if(j==pos)
+                     hackedAccountName=uac.getUsername();
+                 hackedAccountpassword=uac.getPassword();
+                 
+                         System.out.println("Yaay!");
+                      break;   
+               
+                // JOptionPane.showMessageDialog(null, "User Name: "+uac.getUsername());
+                 }
+                 
+                     }
+                 
+                 }
+                 
+                 
+   
+                 }  
+                 
+          
+
+
+
+
+
+   JOptionPane.showMessageDialog(null,"User Credentials Acccount name:" +hackedAccountName +"Account Password"+hackedAccountpassword);
+                 }
+           
+                 
+              
+                 
+         }
