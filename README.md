@@ -1,4 +1,4 @@
-Project Title: Secure Banking Application Development using Object-Oriented Programming and Cybersecurity Concepts for NIW Application
+Project Title: Secure Banking Application Development using Object-Oriented Programming and Cybersecurity Concepts
 Project Overview:
 The goal of this project is to design, develop, and implement a secure banking application that incorporates object-oriented programming (OOP) concepts and robust cybersecurity measures. 
 
